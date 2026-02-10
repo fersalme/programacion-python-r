@@ -1,0 +1,50 @@
+/* Custom CSS for Python Presentation */
+
+.reveal h1 {
+    color: #306998;
+    font-weight: bold;
+}
+
+.reveal h2 {
+    color: #4B8BBE;
+}
+
+.reveal h3 {
+    color: #646464;
+}
+
+.reveal code {
+    background-color: #f4f4f4;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.reveal pre code {
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-left: 3px solid #306998;
+}
+
+.reveal .incremental > * {
+    opacity: 0.5;
+}
+
+.reveal .incremental > *.current-fragment {
+    opacity: 1;
+}
+
+.centered {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.reveal blockquote {
+    border-left: 5px solid #306998;
+    background: #f9f9f9;
+}
+
+/* Highlight Python colors */
+.reveal .python-logo {
+    color: #FFD43B;
+    background: #306998;
+}

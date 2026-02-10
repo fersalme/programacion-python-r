@@ -1,0 +1,131 @@
+---
+title: "Fundamentos de programación con Python y R"
+author: "Fernando Salcedo Mejía Eco, Ms"
+afi: "Escuela de Transformación Digital - ETD | Programa de Ciencia de Datos"
+date: "Febrero de 2026"
+format:
+  revealjs:
+    theme: [default, src/theme/style.scss]
+    slide-number: true
+    transition: fade
+    scrollable: true
+    embed-resources: true
+    logo: src/img/logo_utb.png
+    footer: "UTB-ETD | Programa de Ciencia de Datos"
+    toc: true
+    toc-depth: 2
+title-slide-attributes:
+    data-background-image: src/img/plantilla-inicio.png
+    data-background-opacity: "0.6"
+---
+
+## Contenido del curso de Python y R.
+
+- Sintaxis básica
+- Uso de funciones
+- Estructuras de datos básicas
+- Control de flujo
+- Gestión de errores
+- Instalar paquetes y librerías populares de ciencia de datos
+
+## Estructura del contenido
+
+- En SAVIO estará todo el material del curso.
+- El enfoque es aprender haciendo, por lo que los conceptos técnicos se revisarán con la ejecución del curso.
+- Existe dos Rutas : Python y R
+- Los cuadernos de código de cada lenguaje están por separados.
+
+## Tipos de variables
+
+- Los tipos de variables son las categorías de datos que un lenguaje de programación reconoce y utiliza para almacenar información. Determinan:
+    - Qué clase de valores puede guardar una variable,
+    - Qué operaciones pueden realizarse sobre esos valores,
+    - Cuánta memoria se usa,
+    - Y cómo interpreta el programa esos datos.
+
+::: {.callout-tip}
+Un tipo de variable es la naturaleza del dato que almacena una variable (número, texto, lógico, etc.).
+- En programación existen básicamente las variables :
+    - Números enteros  (`int`) : 1, 2, 4
+    - Números reales (`float`) : 1.2, 0.5, 5.9999
+    - Booleanos (`bool`) : TRUE, FALSE
+    - Cadenas de texto (`str`) : "Aprendiendo Python y R!"
+:::
+
+- Aquí vemos una comparativa del tipo de variables en Python y R
+
+| Tema                        | Python                                                   | R                                                 |
+| --------------------------- | -------------------------------------------------------- | ------------------------------------------------- |
+| Números enteros             | `int`                                                    | `integer`                                         |
+| Números reales              | `float` (doble precisión)                                | `numeric`/`double`                                |
+| Complejos                   | `complex`                                                | `complex`                                         |
+| Booleanos                   | `bool` (valores: `True`, `False`)                        | `logical` (valores: `TRUE`, `FALSE`)              |
+| Cadenas de texto            | `str` (Unicode)                                          | `character`                                       |
+| Nulos / Vacíos              | `None`                                                   | `NULL`                                            |
+| Faltantes                   | `math.nan` / `numpy.nan`                                 | `NA`                                              |
+| Fechas y tiempos            | `datetime.date`, `datetime.datetime`, `pandas.Timestamp` | `Date`, `POSIXct`, `POSIXlt`, `lubridate`         |
+
+## Estructuras de datos
+
+- Las estructuras de datos son formas organizadas de almacenar, gestionar y acceder a la información dentro de un programa. Permiten que los datos se mantengan ordenados y que las operaciones sobre ellos (búsqueda, inserción, eliminación, transformación) se realicen de manera eficiente.
+
+::: {.callout-tip}
+Una estructura de datos es un esquema o contenedor que define cómo se organizan y manipulan los datos en memoria.
+:::
+
+| Vectores                    | Listas o arrays de `numpy`/`pandas`                      | Vectores atómicos (`c()`), vector base de R       |
+| Listas heterogéneas         | `list`                                                   | `list`                                            |
+| Tuplas                      | `tuple` (inmutable)                                      | No nativo; usar listas `c()`                      |
+| Conjuntos                   | `set`, `frozenset`                                       | `unique()`, `factor` (según uso)                  |
+| Diccionarios / Mapas        | `dict`                                                   | `list` nombrada, `environment`, `hash` (paquetes) |
+| Factores / Categóricas      | `pandas.Categorical`                                     | `factor`                                          |
+| Matrices                    | `numpy.ndarray`                                          | `matrix`                                          |
+| Arreglos multidimensionales | `numpy.ndarray`                                          | `array`                                           |
+| Tablas de datos             | `pandas.DataFrame`                                       | `data.frame`, `tibble`                            |
+
+## Operadores
+
+- Los operadores son símbolos o palabras que permiten realizar operaciones sobre uno o más valores (operandos) dentro de un programa.
+Su función es manipular datos: compararlos, combinarlos, modificarlos o evaluar condiciones.
+
+::: {.callout-tip}
+Un operador indica qué tipo de acción se debe realizar entre los valores o variables de una expresión.
+:::
+
+| Tema                          | Python                                               |R
+| ----------------------------- | ---------------------------------------------------- | --------------------------------------------------------------------- |
+| Aritméticos                   | `+`, `-`, `*`, `/`                                   | `+`, `-`, `*`, `/`                                                    |
+| Potencia                      | `**`                                                 | `^`                                                                   |
+| División entera               | `//`                                                 | `%/%`                                                                 |
+| Módulo                        | `%`                                                  | `%%`                                                                  |
+| Comparación                   | `==`, `!=`, `<`, `<=`, `>`, `>=`                     | `==`, `!=`, `<`, `<=`, `>`, `>=`                                      |
+| Lógicos (escalares)           | `and`, `or`, `not`                                   | `&`, `|`, `!`                                                         |
+| Concatenación                 | Cadenas: `+`                                         | Cadenas: `paste()`                                                    |
+| Pertenencia                   | `in`, `not in`                                       | `%in%`                                                                |
+| Asignación                    | `=` (también `:=` en libs específicas)               | `<-`, `=`, `->`                                                       |
+
+## Estructuras de control
+
+- Las estructuras de control son mecanismos que permiten dirigir el flujo de ejecución de un programa, es decir, decidir qué instrucciones se ejecutan, cuándo se ejecutan y cuántas veces se repiten.
+
+::: {.callout-tip}
+Son reglas que controlan el orden en que se ejecutan las líneas de código de un programa.
+:::
+
+| Tema                       | Python                                                         | R                                                |
+| -------------------------- | -------------------------------------------------------------- | -------------------------------------------------|
+| Condicionales              | `if / elif / else`                                             | `if / else if / else`                            |
+| Selección múltiple         | `match-case`                                                   | `switch()`                                       |
+| Bucle `for`                | `for x in iterables:`                                          | `for (x in iterables){ expresion }`              |
+| Bucle `while`              | `while`                                                        | `while`                                          |
+| Salto de bucle             | `break`, `continue`                                            | `break`, `next`                                  |
+| Funciones                  | `def` (parámetros posicionales/nombrados, `*args`, `**kwargs`) | `function(...)` (argumentos nombrados, `...`)    |
+| Anónimas                   | `lambda`                                                       | `function(...)` inline                           |
+| Comprensiones / Aplicación | `[nueva_expr for var in iterable]`                             | Familia `apply(x, 1, iterable)`                  |
+| Manejo de excepciones      | `try / except / finally / else`                                | `try`, `tryCatch`, `withCallingHandlers`         |
+| Contextos / recursos       | `with` (context managers)                                      | `with`, `within`, `on.exit`                      |
+
+## Ejercicios.
+
+- Ir a los cuadernos de Jupyter de R y python
+- Realizar los ejercicios propuesto de Python y R
