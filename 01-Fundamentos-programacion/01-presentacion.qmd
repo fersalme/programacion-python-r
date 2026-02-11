@@ -73,6 +73,8 @@ Un tipo de variable es la naturaleza del dato que almacena una variable (número
 Una estructura de datos es un esquema o contenedor que define cómo se organizan y manipulan los datos en memoria.
 :::
 
+| Tema                        | Python                                                   | R                                                 |
+| --------------------------- | -------------------------------------------------------- | ------------------------------------------------- |
 | Vectores                    | Listas o arrays de `numpy`/`pandas`                      | Vectores atómicos (`c()`), vector base de R       |
 | Listas heterogéneas         | `list`                                                   | `list`                                            |
 | Tuplas                      | `tuple` (inmutable)                                      | No nativo; usar listas `c()`                      |
