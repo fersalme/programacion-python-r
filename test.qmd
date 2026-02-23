@@ -1,0 +1,63 @@
+---
+title: "🎯 Ejercicios Interactivos de Python"
+subtitle: "Practica y Verifica tus Respuestas"
+format:
+  live-html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
+    code-tools: true
+    code-fold: false
+pyodide:
+  packages:
+    - numpy
+---
+
+# 🌟 Bienvenido a los Ejercicios de Python
+
+:::{.callout-tip}
+## 📖 Instrucciones
+- **Ejercicios 1-8**: Completa el código en los espacios marcados
+- **Ejercicios 9-10**: Escribe el código completo desde cero
+- Haz clic en **▶️ Run** para ejecutar tu código
+- El sistema te dirá si tu respuesta es **correcta** o **incorrecta**
+- Si te equivocas, ¡inténtalo de nuevo!
+:::
+
+---
+
+# 📝 Parte 1: Completar el Código
+
+## Ejercicio 1: Variables y Print
+
+**Objetivo**: Crea variables y muéstralas por pantalla.
+
+**Instrucciones**: Completa el código para crear una variable `edad` con el valor 25 y mostrarla.
+
+```{pyodide}
+#| exercise: ex_1
+# Completa el código
+nombre = "María"
+edad = ___  # Asigna el valor 25
+ciudad = "Madrid"
+
+print("Nombre:", nombre)
+print("Edad:", ___)  # Muestra la variable edad
+print("Ciudad:", ciudad)
+
+````
+
+```{pyodide}
+#| exercise: ex_1
+#| check: true
+# Verificación automática
+feedback = None
+try:
+    if edad == 25:
+         feedback = { "correct": True, "message": "Nice work!" }
+    else:
+        feedback = { "correct": False, "message": "That's incorrect, sorry." }
+except NameError:
+    feedback = { "correct": False, "message": "No has definido la variable 'edad' correctamente." }
+feedback
+```
